@@ -20,6 +20,20 @@ function! ToggleNERDTreeAndSyncDir()
     NERDTreeToggle
 endfunction
 
+function! AgProject(searchTerm)
+    let l:current_dir = getcwd()
+    let l:project_root = system('git rev-parse --show-toplevel | tr -d "\n"')
+    if isdirectory(l:project_root)
+        cd l:project_root
+        execute 'Ag' a:searchTerm
+        cd l:current_dir
+    else
+        echo "Project root not found."
+    endif
+endfunction
+
+command! -nargs=1 Agp call AgProject(<f-args>)
+
 function! FindFile()
     let project_root = system('git rev-parse --show-toplevel')
     let project_root = substitute(project_root, '\n$', '', '')
