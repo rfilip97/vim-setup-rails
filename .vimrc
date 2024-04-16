@@ -11,7 +11,7 @@ command! Bd call DeleteAllBuffers()
 command! FFS call ToggleNERDTreeAndSyncDir()
 command! F call FindFile()
 
-nnoremap <C-b> <Plug>(lsp-definition)
+nnoremap <C-j> <Plug>(lsp-definition)
 
 function! DeleteAllBuffers()
     bufdo bd
