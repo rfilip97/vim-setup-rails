@@ -11,6 +11,8 @@ command! Bd call DeleteAllBuffers()
 command! FFS call ToggleNERDTreeAndSyncDir()
 command! F call FindFile()
 
+nnoremap <C-b> <Plug>(lsp-definition)
+
 function! DeleteAllBuffers()
     bufdo bd
 endfunction
@@ -65,6 +67,9 @@ Plug 'prabirshrestha/vim-lsp'
 
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-colorscheme-switcher'
+
+Plug 'vim-ruby/vim-ruby'
+Plug 'dense-analysis/ale'
 
 call plug#end()
 
