@@ -83,3 +83,7 @@ if executable('solargraph')
                 \ })
     augroup END
 endif
+
+if exists(":Ag")
+    let g:ag_prg = "ag --vimgrep -i"
+endif
